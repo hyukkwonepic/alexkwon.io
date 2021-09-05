@@ -2,7 +2,7 @@ import tinytime from 'tinytime';
 import Link from 'next/link';
 import Head from 'next/head';
 import getAllPostPreviews from '@/getAllPostPreviews';
-import twitterCard from '@/img/twitter-card.jpg';
+// import twitterCard from '@/img/twitter-card.jpg';
 import Header from '@/components/Header';
 import SectionContainer from '@/components/SectionContainer';
 
@@ -21,29 +21,29 @@ export default function Home() {
           <div className="divide-y divide-gray-200">
             <Head>
               <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:site" content="@tailwindcss" />
-              <meta name="twitter:creator" content="@tailwindcss" />
-              <meta name="twitter:title" content="Blog – Tailwind CSS" />
+              <meta name="twitter:site" content="@a_h_kwon" />
+              <meta name="twitter:creator" content="@a_h_kwon" />
+              <meta name="twitter:title" content="Blog | Alex H. Kwon" />
               <meta
                 name="twitter:description"
                 content="News content from the Tailwind CSS team."
               />
-              <meta
+              {/* <meta
                 name="twitter:image"
                 content={`https://blog.tailwindcss.com${twitterCard}`}
-              />
-              <meta property="og:url" content="https://blog.tailwindcss.com" />
+              /> */}
+              <meta property="og:url" content="https://alexkwon.io" />
               <meta property="og:type" content="article" />
-              <meta property="og:title" content="Blog – Tailwind CSS" />
+              <meta property="og:title" content="Blog | Alex H. Kwon" />
               <meta
                 property="og:description"
-                content="News content from the Tailwind CSS team."
+                content="Personal blog by Alex Kwon."
               />
-              <meta
+              {/* <meta
                 property="og:image"
                 content={`https://blog.tailwindcss.com${twitterCard}`}
-              />
-              <title>Blog – Tailwind CSS</title>
+              /> */}
+              <title>Blog | Alex H. Kwon</title>
               <meta
                 name="description"
                 content="News content from the Tailwind CSS team."
@@ -53,9 +53,9 @@ export default function Home() {
               <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl md:text-[4rem] md:leading-[3.5rem]">
                 Latest
               </h1>
-              <p className="text-lg text-gray-500">
+              {/* <p className="text-lg text-gray-500">
                 All the latest Tailwind CSS news, straight from the team.
-              </p>
+              </p> */}
             </div>
             <ul className="divide-y divide-gray-200">
               {posts.map(({ link, module: { default: Component, meta } }) => {

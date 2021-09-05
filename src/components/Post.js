@@ -4,9 +4,9 @@ import tinytime from 'tinytime';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { MDXProvider } from '@mdx-js/react';
-import Header, { TailwindMark } from '@/components/Header';
+import Header from '@/components/Header';
 import SectionContainer from '@/components/SectionContainer';
-import smallCard from '@/img/twitter-card-small.jpg';
+// import smallCard from '@/img/twitter-card-small.jpg';
 
 const postDateTemplate = tinytime('{dddd}, {MMMM} {DD}, {YYYY}');
 
@@ -20,12 +20,12 @@ export default function Post({ meta, children, posts }) {
           <main>
             <article className="py-16">
               <Head>
-                <title>{meta.title} – Tailwind CSS</title>
-                <meta name="twitter:site" content="@tailwindcss" />
-                <meta name="twitter:creator" content="@tailwindcss" />
+                <title>{meta.title} – Alex H. Kwon</title>
+                <meta name="twitter:site" content="@a_h_kwon" />
+                <meta name="twitter:creator" content="@a_h_kwon" />
                 <meta
                   name="twitter:title"
-                  content={`${meta.title} – Tailwind CSS`}
+                  content={`${meta.title} – Alex H. Kwon`}
                 />
                 <meta name="twitter:description" content={meta.description} />
                 {meta.image ? (
@@ -39,10 +39,10 @@ export default function Post({ meta, children, posts }) {
                 ) : (
                   <>
                     <meta name="twitter:card" content="summary" />
-                    <meta
+                    {/* <meta
                       name="twitter:image"
                       content={`https://blog.tailwindcss.com${smallCard}`}
-                    />
+                    /> */}
                   </>
                 )}
                 <meta
@@ -52,7 +52,7 @@ export default function Post({ meta, children, posts }) {
                 <meta property="og:type" content="article" />
                 <meta
                   property="og:title"
-                  content={`${meta.title} – Tailwind CSS`}
+                  content={`${meta.title} – Alex H. Kwon`}
                 />
                 <meta property="og:description" content={meta.description} />
                 <meta
@@ -67,7 +67,7 @@ export default function Post({ meta, children, posts }) {
                     <Link href="/">
                       <a className="inline-flex">
                         <span className="sr-only">All posts</span>
-                        <TailwindMark className="h-12 w-12" />
+                        {/* <TailwindMark className="h-12 w-12" /> */}
                       </a>
                     </Link>
                   </div>
@@ -136,13 +136,13 @@ export default function Post({ meta, children, posts }) {
         <main>
           <article className="xl:divide-y xl:divide-gray-200">
             <Head>
-              <title>{meta.title} – Tailwind CSS</title>
+              <title>{meta.title} – Alex H. Kwon</title>
               <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:site" content="@tailwindcss" />
-              <meta name="twitter:creator" content="@tailwindcss" />
+              <meta name="twitter:site" content="@a_h_kwon" />
+              <meta name="twitter:creator" content="@a_h_kwon" />
               <meta
                 name="twitter:title"
-                content={`${meta.title} – Tailwind CSS`}
+                content={`${meta.title} – Alex H. Kwon`}
               />
               <meta name="twitter:description" content={meta.description} />
               <meta
@@ -156,7 +156,7 @@ export default function Post({ meta, children, posts }) {
               <meta property="og:type" content="article" />
               <meta
                 property="og:title"
-                content={`${meta.title} – Tailwind CSS`}
+                content={`${meta.title} – Alex H. Kwon`}
               />
               <meta property="og:description" content={meta.description} />
               <meta
@@ -248,7 +248,7 @@ export default function Post({ meta, children, posts }) {
                     {next && (
                       <div>
                         <h2 className="text-xs leading-5 tracking-wide uppercase text-gray-500">
-                          Next Article
+                          Next Post
                         </h2>
                         <div className="text-teal-600 hover:text-teal-700">
                           <Link href={next.link}>
@@ -260,7 +260,7 @@ export default function Post({ meta, children, posts }) {
                     {previous && (
                       <div>
                         <h2 className="text-xs leading-5 tracking-wide uppercase text-gray-500">
-                          Previous Article
+                          Previous Post
                         </h2>
                         <div className="text-teal-600 hover:text-teal-700">
                           <Link href={previous.link}>
@@ -274,7 +274,7 @@ export default function Post({ meta, children, posts }) {
                 <div className="pt-8">
                   <Link href="/">
                     <a className="text-teal-600 hover:text-teal-700">
-                      &larr; Back to the blog
+                      &larr; Back to the main
                     </a>
                   </Link>
                 </div>
