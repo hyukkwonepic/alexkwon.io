@@ -22,7 +22,7 @@ export default function Home() {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@a_h_kwon" />
             <meta name="twitter:creator" content="@a_h_kwon" />
-            <meta name="twitter:title" content="Blog | Alex H. Kwon" />
+            <meta name="twitter:title" content="Alex H. Kwon" />
             <meta
               name="twitter:description"
               content="News content from the Tailwind CSS team."
@@ -33,7 +33,7 @@ export default function Home() {
               /> */}
             <meta property="og:url" content="https://alexkwon.io" />
             <meta property="og:type" content="article" />
-            <meta property="og:title" content="Blog | Alex H. Kwon" />
+            <meta property="og:title" content="Alex H. Kwon" />
             <meta
               property="og:description"
               content="Personal blog by Alex Kwon."
@@ -42,7 +42,7 @@ export default function Home() {
                 property="og:image"
                 content={`https://blog.tailwindcss.com${twitterCard}`}
               /> */}
-            <title>Blog | Alex H. Kwon</title>
+            <title>Alex H. Kwon</title>
             <meta
               name="description"
               content="News content from the Tailwind CSS team."
