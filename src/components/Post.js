@@ -20,12 +20,12 @@ export default function Post({ meta, children, posts }) {
           <main>
             <article className="py-16">
               <Head>
-                <title>{meta.title} – Alex H. Kwon</title>
+                <title>{meta.title} | Alex H. Kwon</title>
                 <meta name="twitter:site" content="@a_h_kwon" />
                 <meta name="twitter:creator" content="@a_h_kwon" />
                 <meta
                   name="twitter:title"
-                  content={`${meta.title} – Alex H. Kwon`}
+                  content={`${meta.title} | Alex H. Kwon`}
                 />
                 <meta name="twitter:description" content={meta.description} />
                 {meta.image ? (
@@ -52,7 +52,7 @@ export default function Post({ meta, children, posts }) {
                 <meta property="og:type" content="article" />
                 <meta
                   property="og:title"
-                  content={`${meta.title} – Alex H. Kwon`}
+                  content={`${meta.title} | Alex H. Kwon`}
                 />
                 <meta property="og:description" content={meta.description} />
                 <meta
@@ -135,13 +135,13 @@ export default function Post({ meta, children, posts }) {
         <main>
           <article className="xl:divide-y xl:divide-gray-200">
             <Head>
-              <title>{meta.title} – Alex H. Kwon</title>
+              <title>{meta.title} | Alex H. Kwon</title>
               <meta name="twitter:card" content="summary_large_image" />
               <meta name="twitter:site" content="@a_h_kwon" />
               <meta name="twitter:creator" content="@a_h_kwon" />
               <meta
                 name="twitter:title"
-                content={`${meta.title} – Alex H. Kwon`}
+                content={`${meta.title} | Alex H. Kwon`}
               />
               <meta name="twitter:description" content={meta.description} />
               <meta
@@ -155,7 +155,7 @@ export default function Post({ meta, children, posts }) {
               <meta property="og:type" content="article" />
               <meta
                 property="og:title"
-                content={`${meta.title} – Alex H. Kwon`}
+                content={`${meta.title} | Alex H. Kwon`}
               />
               <meta property="og:description" content={meta.description} />
               <meta
