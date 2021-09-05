@@ -10,7 +10,7 @@ const posts = getAllPostPreviews();
 
 const postDateTemplate = tinytime('{MMMM} {DD}, {YYYY}');
 
-export default function Home() {
+export default function PostList() {
   return (
     <>
       <SectionContainer>
@@ -72,7 +72,6 @@ export default function Home() {
                           </time>
                         </dd>
                       </dl>
-
                       <div className="mt-4 xl:col-span-3">
                         <div>
                           <Link href={link}>
@@ -84,18 +83,18 @@ export default function Home() {
                           </Link>
 
                           <div className="mt-4 prose max-w-none text-gray-500">
-                            {meta.description}
+                            <Component />
                           </div>
 
-                          <div className="mt-4 space-x-4">
+                          <div className="mt-4 space-x-2">
                             {meta.tags.map((tag) => {
                               return (
-                                <Link key={tag} href={`/tags/${tag}`}>
+                                <Link href={`/tags/${tag}`}>
                                   <a
                                     className="text-base font-medium text-teal-600 hover:text-teal-700"
                                     key={tag}
                                   >
-                                    {tag}
+                                    #{tag}
                                   </a>
                                 </Link>
                               );

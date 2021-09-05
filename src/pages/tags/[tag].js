@@ -5,12 +5,16 @@ import getAllPostPreviews from '@/getAllPostPreviews';
 // import twitterCard from '@/img/twitter-card.jpg';
 import Header from '@/components/Header';
 import SectionContainer from '@/components/SectionContainer';
+import { useRouter } from 'next/router';
 
 const posts = getAllPostPreviews();
 
 const postDateTemplate = tinytime('{MMMM} {DD}, {YYYY}');
 
-export default function Home() {
+export default function Tag(props) {
+  const router = useRouter();
+  const { tag } = router.query;
+
   return (
     <>
       <SectionContainer>
@@ -53,60 +57,61 @@ export default function Home() {
           <div className="divide-y divide-gray-200">
             <div className="pt-6 pb-8 space-y-2 md:space-y-5">
               <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
-                Blog
+                {tag}
               </h1>
               <p className="text-lg text-gray-500">
-                All the latest blog posts.
+                All the latest blog posts about {tag}.
               </p>
             </div>
             <ul className="divide-y divide-gray-200">
-              {posts.map(({ link, module: { default: Component, meta } }) => {
-                return (
-                  <li key={link} className="py-12">
-                    <article>
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-base font-medium text-gray-500">
-                          <time dateTime={meta.date}>
-                            {postDateTemplate.render(new Date(meta.date))}
-                          </time>
-                        </dd>
-                      </dl>
+              {posts
+                .filter((post) => post.module.meta.tags.includes(tag))
+                .map(({ link, module: { default: Component, meta } }) => {
+                  return (
+                    <li key={link} className="py-12">
+                      <article>
+                        <dl>
+                          <dt className="sr-only">Published on</dt>
+                          <dd className="text-base font-medium text-gray-500">
+                            <time dateTime={meta.date}>
+                              {postDateTemplate.render(new Date(meta.date))}
+                            </time>
+                          </dd>
+                        </dl>
+                        <div className="mt-4 xl:col-span-3">
+                          <div>
+                            <Link href={link}>
+                              <a>
+                                <h2 className="text-2xl text-gray-900 font-bold tracking-tight">
+                                  {meta.title}
+                                </h2>
+                              </a>
+                            </Link>
 
-                      <div className="mt-4 xl:col-span-3">
-                        <div>
-                          <Link href={link}>
-                            <a>
-                              <h2 className="text-2xl text-gray-900 font-bold tracking-tight">
-                                {meta.title}
-                              </h2>
-                            </a>
-                          </Link>
+                            <div className="mt-4 prose max-w-none text-gray-500">
+                              {meta.description}
+                            </div>
 
-                          <div className="mt-4 prose max-w-none text-gray-500">
-                            {meta.description}
-                          </div>
-
-                          <div className="mt-4 space-x-4">
-                            {meta.tags.map((tag) => {
-                              return (
-                                <Link key={tag} href={`/tags/${tag}`}>
-                                  <a
-                                    className="text-base font-medium text-teal-600 hover:text-teal-700"
-                                    key={tag}
-                                  >
-                                    {tag}
-                                  </a>
-                                </Link>
-                              );
-                            })}
+                            <div className="mt-4 space-x-4">
+                              {meta.tags.map((tag) => {
+                                return (
+                                  <Link key={tag} href={`/tags/${tag}`}>
+                                    <a
+                                      className="text-base font-medium text-teal-600 hover:text-teal-700"
+                                      key={tag}
+                                    >
+                                      {tag}
+                                    </a>
+                                  </Link>
+                                );
+                              })}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </article>
-                  </li>
-                );
-              })}
+                      </article>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
         </main>
