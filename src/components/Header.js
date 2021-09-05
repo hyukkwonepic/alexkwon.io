@@ -6,7 +6,7 @@ export default function Header() {
       <div>
         <Link href="/">
           <a aria-label="Alex H. Kwon Blog">
-            <div className="text-2xl md:text-2xl font-bold text-gray-600">
+            <div className="text-2xl font-extrabold text-gray-900">
               Alex H. Kwon
             </div>
           </a>
@@ -18,7 +18,7 @@ export default function Header() {
           target="_blank"
           className="font-medium text-gray-500 hover:text-gray-700"
         >
-          About &rarr;
+          {/* About &rarr; */}
         </a>
       </div>
     </header>

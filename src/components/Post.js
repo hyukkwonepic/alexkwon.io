@@ -126,7 +126,6 @@ export default function Post({ meta, children, posts }) {
   const postIndex = posts.findIndex((post) => post.link === router.pathname);
   const previous = posts[postIndex + 1];
   const next = posts[postIndex - 1];
-
   return (
     <>
       <SectionContainer>
@@ -222,13 +221,13 @@ export default function Post({ meta, children, posts }) {
                 <div className="max-w-none pt-10 pb-8">
                   <MDXProvider>{children}</MDXProvider>
                 </div>
-                {meta.footer && (
+                {/* {meta.footer && (
                   <div
                     className="pt-6 pb-16"
                     dangerouslySetInnerHTML={{ __html: meta.footer }}
                   />
-                )}
-                {!meta.footer && meta.discussion && (
+                )} */}
+                {/* {!meta.footer && meta.discussion && (
                   <div className="pt-6 pb-16">
                     <p>
                       Want to talk about this post?{' '}
@@ -240,9 +239,27 @@ export default function Post({ meta, children, posts }) {
                       </a>
                     </p>
                   </div>
-                )}
+                )} */}
               </div>
               <footer className="text-sm font-medium divide-y divide-gray-200 xl:col-start-1 xl:row-start-2">
+                <div className="space-y-8 py-8">
+                  <div>
+                    <h2 className="text-xs leading-5 tracking-wide uppercase text-gray-500">
+                      Tags
+                    </h2>
+                    <div className="space-x-2">
+                      {meta.tags.map((tag) => {
+                        return (
+                          <Link key={tag} href={`/tags/${tag}`}>
+                            <a className="text-teal-600 hover:text-teal-700">
+                              {tag}
+                            </a>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
                 {(next || previous) && (
                   <div className="space-y-8 py-8">
                     {next && (
@@ -274,7 +291,7 @@ export default function Post({ meta, children, posts }) {
                 <div className="pt-8">
                   <Link href="/">
                     <a className="text-teal-600 hover:text-teal-700">
-                      &larr; Back to the main
+                      &larr; Back to the home
                     </a>
                   </Link>
                 </div>
